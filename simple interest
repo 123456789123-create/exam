@@ -1,0 +1,72 @@
+Write a Python program to calculate Simple Interest based on the principal amount, rate of interest, and time entered by the user. The program should display the calculated interest as output. Push this program to a GitHub repository using Git commands from your local system and build it periodically every 3 minutes.
+Expected Output:
+The program should prompt the user to enter the principal, rate of interest, and period. It should then display the simple interest calculated using the formula:
+Simple Interest = (Principal × Rate × Time) /100 It should be successfully pushed to GitHub
+from the local machine. It should be built using Jenkins tool.
+
+ANS:1. Open Git Bash or Command Prompt and configure Git:
+git config --global user.name "YourName"
+git config --global user.email "your.email@example.com"
+
+2.Create project folder, file and Initialize.
+Mkdir simple-interest
+cd simple-interest  
+git init
+
+#rate.py
+p = 10000        		# Principal
+r = 5           	 	#Rate of Interest
+t = 3            		#Time in years
+si = (p*r*t) / 100 
+print(f"Simple Interest: {si}")
+
+3. Run locally to verify
+rate.py
+Simple Interest: 1500.0
+
+4.file status and commit
+cd simple-interest  
+git status
+git add rate.py
+git commit -m "interest calculation program"
+
+5. Create remote repository on GitHub
+Go to GitHub → New repository → name it simple-interest → create (do NOT initialize with README. Copy repourl).
+
+6. Add remote and push (HTTPS)
+git remote add origin https://github.com/<your-username>/simple-interest.git
+git remote –v 		 #To verify remote
+git branch       		#To check the branch
+git branch -M main	 #To rename the branch
+git push origin main	#To push the file or folder into GitHub.
+7. Install Jenkins
+Open browser write http://localhost:8080
+Enter Username and passward
+
+8. Configure Jenkins Job
+Create a New Jenkins Job:
+Click New Item → Freestyle Project → Name it Simple-interest
+Click OK.
+
+9. General 
+In generalThis project is parameterized select string parameter nameprincipal, select string parameter namerate,select string parameter name time.
+
+9. Configure Git Repository:
+In the Source Code Management section, select Git.
+Enter the GitHub repository URL:
+https://github.com/yourusername/simple-interest.git
+Select main branch.
+
+10 Schedule Job Executions Every 3 Minutes:
+In the Build Triggers section, check Build periodically
+Enter: H/3 * * * *
+
+11. Add Build Step:
+Click Add Build Step → Select execute Windows batch command.
+Enter: python rate.py  %PRINCIPAL%  %RATE%  %TIME%
+
+12. Save & Build the Job:
+Click Save and then Build with parameters  enter principal, rate, time Buid.
+Check the console output for execution logs.
+Conclusion: The Python program accurately calculates Simple Interest using user inputs for principal, rate, and time. It was successfully pushed to GitHub and automated
+in Jenkins to build and run every 3 minutes, demonstrating effective use of Python, Git, and Jenkins for continuous integration.
