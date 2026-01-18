@@ -1,0 +1,64 @@
+4.	Create a repository on GitHub (remote system) and write a Python program that performs addition and subtraction of two numbers in main/master branch. Clone this repository to your local system. Then, create a new branch named "local" locally, add functionalities for multiplication and division to the existing program, and push the updated branch back to the remote GitHub repository.
+Expected Output:
+The program should first display the results of addition and subtraction of two numbersaftercloningfromremotesystemtolocalsystem.Createa“local”branch; after modifying the code in the "local" branch, it should also display the results of addition, subtraction multiplication and division. The updated code with all four operations should be pushed successfully to the GitHub repository under the "local" branch. Perform the Merging of branches.
+ANS: 1.Open Git Bash or Command Prompt and configure Git:
+git config --global user.name "YourName"
+git config --global user.email "your.email@example.com"
+	
+2. Create remote repository on GitHub
+Go to GitHub→ New repository→ name it math-opr→ create (Add README).
+
+3. Create new file in github
+Click add fileclick on create new file write file name as math.pycommit the changes copy the code url. 
+
+# Math.py
+    a = float(input("Enter first number: "))
+    b = float(input("Enter second number: "))
+    print(f"Addition: {a + b}")
+    print(f"Subtraction: {a - b}")	#commit the changes copy the code url.
+
+4.Now clone to your local machine
+git clone https://github.com/<your-username>/math-opr.git
+cd vote
+
+5.Run locally to verify
+Enter first number: 20
+Enter second number: 10
+Addition: 30.0
+Subtraction: 10.0
+
+6.creating new branch
+git branch –m local
+
+7.modifying math.py
+# math.py (local branch)
+    a = float(input("Enter first number: "))
+    b = float(input("Enter second number: "))
+    print(f"Addition: {a + b}")
+    print(f"Subtraction: {a - b}")
+    print(f"Multiplication: {a * b}")
+    if b != 0:
+        print(f"Division: {a / b}")
+    else:
+        print("Division by zero is not allowed.")
+
+8.Run locally to verify
+Enter first number: 20
+Enter second number: 10
+Addition: 30.0
+Subtraction: 10.0
+Multiplication: 200.0
+Division: 2.0
+
+9.file status and commit and push
+git status
+git add math.py
+git commit -m “modified math program"
+git push origin local
+
+10.merging the branches
+go to git hub click on compare and pull request create pull request merge all request confirm merge pull request successfully merged and closed.
+#The changes made appear in the both main and local branch.
+
+Conclusion: We created a Python program on the main branch that performs addition and subtraction of two numbers. We pushed the main branch code to a remote GitHub repository for version control. The repository was cloned from GitHub to the local system for further development. We created a new local branch named "local" to add new functionalities. In the local branch, we enhanced the program to include multiplication and division operations. After successful testing, we committed and pushed the updated code to GitHub under the “local” branch. Finally, we merged the “local” branch into the main branch to combine all functionalities into a single version. This process ensured proper branching, merging, and structured version control using Git and GitHub.
+
