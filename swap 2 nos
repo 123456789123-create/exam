@@ -1,0 +1,48 @@
+3.	Write a Python program to swap the values of two numbers entered by the user. Display the values before and after swapping. Push this program to a GitHub repository using Git commands from your local system.
+Expected Output:
+The program should display the values of the two numbers before swapping and after swapping. It should be successfully pushed to GitHub from the local machine.
+
+    ANS:  1. Open Git Bash or Command Prompt and configure Git:
+git config --global user.name "YourName"
+git config --global user.email "your.email@example.com"
+
+2. Create project folder & file
+Mkdir swap-numbers
+cd swap-numbers
+git init
+
+# swap.py
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print(f"Before swapping: a = {a}, b = {b}")
+a, b = b, a		# Swapping
+print(f"After swapping: a = {a}, b = {b}")
+  
+3. Run locally
+Enter first number: 5
+Enter second number: 10
+Before swapping: a = 5, b = 10
+After swapping: a = 10, b = 5
+
+4.file status and commit
+	git status
+git add .
+git commit -m "Add greeting program"
+
+5. Create remote repository on GitHub
+GitHub → New repository → swap-numbers → create (do NOT initialize README)
+
+6. Add remote and push (HTTPS)
+# example HTTPS remote
+git remote add origin https://github.com/<your-username>/swap-numbers.git
+git remote –v   #To verify remote
+git branch       		#To check the branch
+git branch -M main	#To rename the branch
+git push origin main	 #To push the file or folder into GitHub.
+
+
+
+Conclusion: We created a Python program to swap two numbers entered by the user, displaying values before and after swapping. We tested it locally to confirm correctness of the swapping logic. We committed the program and pushed it to a GitHub repository under the main branch. The code was version-controlled with Git and pushed to GitHub, enabling proper code tracking and sharing.
+
+
+  
